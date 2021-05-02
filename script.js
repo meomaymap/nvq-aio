@@ -1,4 +1,26 @@
+//Định nghĩa viết tắt cho element
+function ECN(NameClass, pos) {return document.getElementsByClassName(NameClass)[pos];}
+function ECN_Array(NameClass, pos) {return document.getElementsByClassName(NameClass);}
+function ETN(NameTag, pos) {return document.getElementsByTagName(NameTag)[pos];}
+function ETN_Array(NameTag, pos) {return document.getElementsByTagName(NameTag);}
+function EN(Name, pos) {return document.getElementsByName(Name)[pos];}
+function EN_Array(Name, pos) {return document.getElementsByName(Name);}
 function EID(NameID) {return document.getElementById(NameID);}
+        // Kết thúc Định nghĩa viết tắt cho element
+
+        //set properties for object
+function setStyle(el, propertyObject ) {
+  for (var property in propertyObject) {
+    el.style[property] = propertyObject[property];
+  }
+}
+function setStyleAllClass(NameClass, propertyObject) {
+  var el = ECN_Array(NameClass)
+  for (i=0; i<el.length;i++) {
+    setStyle(el[i], propertyObject);
+  }
+}
+
 
 function loadjscssfile(filename, filetype){
   if (filetype=="js"){ //if filename is a external JavaScript file
@@ -66,31 +88,102 @@ function preventPullToRefresh(element) {
 
 preventPullToRefresh('html');
 
-
-
-
-
 window.addEventListener("resize", displayWindowSize);
 
 function displayWindowSize(){
     // Get width and height of the window excluding scrollbars
     var h = window.innerHeight;
-    
-    
-    // Display result inside a div element
-    EID("myFrame1").style.height = h -2*EID("myFrame1").offsetTop + "px";
 
-    //changeFontSize("Thoat", 60);
-    //alert(IFrame.offsetHeight);
+    //EID("myFrame1").style.height = h - EID("Header").offsetHeight + "px";
+    var x = document.getElementsByClassName("myFrame");
+    for (var i=0; i<x.length; i++){
+      x[i].style.height = h - EID("Header").offsetHeight + "px";
+    }
 }
 
-displayWindowSize();
+
+
+
+EID("Header").addEventListener("click", function() {
+
+});
+
+var slag;
+napData();
+function napData() {
+  //neu dk thỏa thì làm nap 
+  var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
+  var url = script_url+"?";
+                url = url + "action" + "=" + "Import_ListProgram";
+                url = url + "&" + "url" + "=" + "https://meomaymap.github.io";	//window.location.href;
+                url = url + "&" + "dk" + "=" + 1;
+
+  $.getJSON(url, function (json) {
+    slag = json.records.map(doc => Object.values(doc));
+    
+    
+      //for (var i = 0; i < json.records.length; i++) {
+        var x = document.getElementsByClassName("Content")[0];
+                    
+                    var node = document.createElement("iframe");
+                    x.appendChild(node);
+                    node.setAttribute('id', "myFrame1");
+                    node.setAttribute('class', "myFrame");
+                    node.setAttribute('frameborder', "0");
+                    node.setAttribute('width', "100%");
+                    node.setAttribute('style', "display:none;");
+                    //node.setAttribute('onclick', "openProgram(this);");
+                    
+                    GotoUrl("myFrame1", "https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
+                    
+
+      //}               
+          EID("Header").style.display = "block";
+         displayWindowSize();       
+    });
+}
+
+
+
+
+function gotoPageAuthPhone(){
+  
+  var str = window.location.href;
+  str = str.split('?')[1];
+  if(str){
+    var thoigian = parseFloat(str.split('+')[0]);
+
+    if (thoigian) {
+      if (Date.now()-thoigian < 300){
+
+        location.replace("https://nvq-auth.stackblitz.io");
+      } else {
+        //location.replace("https://meomaymap.stackblitz.io");
+        DivAuth.style.display = "none";
+      }
+    } else {
+      location.replace("https://nvq-auth.stackblitz.io");
+    }
+  } else {
+    location.replace("https://nvq-auth.stackblitz.io");
+  }
+  
+
+  //
+}
+
+
+
 
 function GotoUrl(IDFrame_Name, link){
   EID(IDFrame_Name).src = link;
 }
 
-QQ();
+//QQ();
 function QQ(){
   GotoUrl("myFrame1", "https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
 } 
+
+function VisibleIFrame() {
+  alert(1);
+}
