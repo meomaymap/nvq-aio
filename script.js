@@ -1,6 +1,9 @@
+// Import stylesheets
+import './style.css';
+
 //Định nghĩa viết tắt cho element
 function ECN(NameClass, pos) {return document.getElementsByClassName(NameClass)[pos];}
-function ECN_Array(NameClass, pos) {return document.getElementsByClassName(NameClass);}
+function ECN_Array(NameClass,pos) {return document.getElementsByClassName(NameClass);}
 function ETN(NameTag, pos) {return document.getElementsByTagName(NameTag)[pos];}
 function ETN_Array(NameTag, pos) {return document.getElementsByTagName(NameTag);}
 function EN(Name, pos) {return document.getElementsByName(Name)[pos];}
@@ -115,6 +118,7 @@ function napData() {
   var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
   var url = script_url+"?";
                 url = url + "action" + "=" + "Import_ListProgram";
+                //url = url + "action" + "=" + "Condition";
                 url = url + "&" + "url" + "=" + "https://meomaymap.github.io";	//window.location.href;
                 url = url + "&" + "dk" + "=" + 1;
 
@@ -122,7 +126,7 @@ function napData() {
     slag = json.records.map(doc => Object.values(doc));
     
     
-      //for (var i = 0; i < json.records.length; i++) {
+      for (var i = 0; i < json.records.length; i++) {
         var x = document.getElementsByClassName("Content")[0];
                     
                     var node = document.createElement("iframe");
@@ -132,18 +136,39 @@ function napData() {
                     node.setAttribute('frameborder', "0");
                     node.setAttribute('width', "100%");
                     node.setAttribute('style', "display:none;");
+                    node.setAttribute('src', slag[i][0]);
                     //node.setAttribute('onclick', "openProgram(this);");
-                    
-                    GotoUrl("myFrame1", "https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
-                    
 
-      //}               
+                    
+        var x = document.getElementsByClassName("dropdown-content")[0];
+                    var node = document.createElement("a");
+                    x.appendChild(node);
+                    node.setAttribute('class', "Item Item" + i);
+                    node.innerHTML = slag[i][2];
+      }               
           EID("Header").style.display = "block";
-         displayWindowSize();       
+         displayWindowSize();   
+          //alert(slag);    
     });
 }
 
 
+document.body.addEventListener("click", function(e) {
+  var str = e.target.className;
+  var arr = str.split(" ");
+
+  var vitri = parseInt(arr[1].substring(4,str.length - 4));
+  if (arr[0] == "Item"){
+    
+    for (var i=0; i<ECN_Array("myFrame").length; i++){
+      ECN("myFrame",i).style.display = "none";
+    }
+
+    ECN("myFrame",vitri).style.display = "block";
+    //GotoUrl(ECN("myFrame",vitri), slag[vitri][0]);//"https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
+    
+  }
+});
 
 
 function gotoPageAuthPhone(){
@@ -175,15 +200,11 @@ function gotoPageAuthPhone(){
 
 
 
-function GotoUrl(IDFrame_Name, link){
-  EID(IDFrame_Name).src = link;
+function GotoUrl(ele, link){
+  ele.src = link;
 }
 
 //QQ();
 function QQ(){
   GotoUrl("myFrame1", "https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
 } 
-
-function VisibleIFrame() {
-  alert(1);
-}
