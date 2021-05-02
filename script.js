@@ -127,7 +127,23 @@ function displayWindowSize() {
 			pos = Math.pow(2, i);
 		}
 	}
+	
+	 var h = window.innerHeight;
 
+    //var x = document.getElementsByClassName("frame");
+    //for (var i=0; i<x.length; i++){
+    //  x[i].style.height = h - EID("Header").offsetHeight + "px";
+    //}
+
+    ECN("row",0).style.height = h - EID("Header").offsetHeight - EID("bottom").offsetHeight + "px";
+	/*
+    for(var i=0; i<DisplaySize[0].length;i++){
+                if(window.innerWidth > DisplaySize[0][i] && window.innerWidth <= DisplaySize[1][i]) {
+                    SizeChange = "screen and (min-width: " + DisplaySize[0][i] + "px) and (max-width: " + DisplaySize[1][i] + "px)";
+                    pos = Math.pow(2, i);
+                }
+            }
+	*/
 	AllDevice();
 }            
 
