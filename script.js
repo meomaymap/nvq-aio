@@ -93,6 +93,44 @@ preventPullToRefresh('html');
 
 window.addEventListener("resize", displayWindowSize);
 
+
+var DisplaySize = [[992, 576, 1], 
+                  [5000,991,575]];     //desktop, tablet, Mobile
+var SizeChange;
+var pos;
+        
+for(var i=0; i<DisplaySize[0].length;i++){
+  if(window.innerWidth > DisplaySize[0][i] && window.innerWidth <= DisplaySize[1][i]) {
+    SizeChange = "screen and (min-width: " + DisplaySize[0][i] + "px) and (max-width: " + DisplaySize[1][i] + "px)";
+    pos = i;
+  }
+}
+
+function AllDevice() {
+            const mql = window.matchMedia(SizeChange);
+
+
+            checkMedia(mql);
+            mql.addListener(checkMedia);
+
+            //lock('portrait');
+            function checkMedia(mql){
+
+                if(mql.matches){
+
+                    setStyleAllClass("row", {"padding-top": 2*pos+"vw", "padding-bottom": 2*pos+"vw"});
+                    setStyleAllClass(NameClassCol, {"width":(100/MaxNumCol)*pos + "%", "padding": 1*pos+"vw", "height":12*pos+"vw"});
+                    setStyleAllClass("item", {"height":9*pos+"vw", "border-radius": 1*pos + "vw"});
+                    setStyleAllClass("Q01a", {"font-size":6*pos+"vw"});
+                    setStyleAllClass("Q01b", {"height":3*pos+"vw","font-size":0.8*pos+"vw", "border-bottom-left-radius": 1*pos + "vw", "border-bottom-right-radius": 1*pos + "vw"});
+
+                    //lock('portrait');
+                }
+            }
+            //lock('portrait');
+        }
+
+
 function displayWindowSize(){
     // Get width and height of the window excluding scrollbars
     var h = window.innerHeight;
@@ -102,6 +140,17 @@ function displayWindowSize(){
     for (var i=0; i<x.length; i++){
       x[i].style.height = h - EID("Header").offsetHeight + "px";
     }
+
+    ECN("module",0).style.height = h - EID("Header").offsetHeight + "px";
+
+    for(var i=0; i<DisplaySize[0].length;i++){
+                if(window.innerWidth > DisplaySize[0][i] && window.innerWidth <= DisplaySize[1][i]) {
+                    SizeChange = "screen and (min-width: " + DisplaySize[0][i] + "px) and (max-width: " + DisplaySize[1][i] + "px)";
+                    pos = Math.pow(2, i);
+                }
+            }
+
+            AllDevice();
 }
 
 
@@ -145,8 +194,32 @@ function napData() {
                     x.appendChild(node);
                     node.setAttribute('class', "Item Item" + i);
                     node.innerHTML = slag[i][2];
+
+        var x = document.getElementsByClassName("row")[0];
+                    
+                    var node = document.createElement("div");
+                    x.appendChild(node);
+                    node.setAttribute('class', "column");
+                    node.setAttribute('onclick', "openProgram(this);");
+                    
+
+                    var x = node;
+                    var node = document.createElement("div");
+                    x.appendChild(node);
+                    node.setAttribute('class', "item");
+
+                    var x = node;
+                    var node = document.createElement("i");
+                    x.appendChild(node);
+                    node.setAttribute('class', json.records[i].Col5 + " " + "Q01a");
+
+                    var node = document.createElement("div");
+                    x.appendChild(node);
+                    node.setAttribute('class', "Q01b");
+                    node.innerHTML = json.records[i].Col4;
       }               
           EID("Header").style.display = "block";
+          ECN("module",0).style.display = "block";
          displayWindowSize();   
           //alert(slag);    
     });
@@ -164,11 +237,15 @@ document.body.addEventListener("click", function(e) {
       ECN("myFrame",i).style.display = "none";
     }
 
+    ECN("module",0).style.display = "none";
+    ECN("Content",0).style.display = "block";
     ECN("myFrame",vitri).style.display = "block";
     //GotoUrl(ECN("myFrame",vitri), slag[vitri][0]);//"https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
     
   }
 });
+
+
 
 
 function gotoPageAuthPhone(){
@@ -208,3 +285,4 @@ function GotoUrl(ele, link){
 function QQ(){
   GotoUrl("myFrame1", "https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
 } 
+
