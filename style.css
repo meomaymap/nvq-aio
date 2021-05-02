@@ -1,4 +1,4 @@
-
+<style>
 	:root {--parent-height-1: 5vh;}
 		
 	* {touch-action: manipulation;}
@@ -197,4 +197,5 @@
         }
         
 }
-	
+
+</style>
