@@ -1,41 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, height=device-height, maximum-scale=1.0, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://meomaymap.github.io/nvq-aio/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<meta charset="UTF-8">
-
-
-</head>
-<body>
-	<div class="main">
-	 
-		<div id="id01" class="loading" style="display: none" >
-			<div class="Loading-content">
-				<div class="loader" onclick="document.getElementById('id01').style.display='none'"></div>
-			</div>
-		  
+	
+    <title>Tổng hợp các chương trình</title>
+  </head>
+  <body>
+    <div id="Header" class="Header" style="display:none">
+      <div class="dropdown">
+        <button class="dropbtn">Danh mục phần mềm 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content"></div>
+      </div>
+      <a id="Thoat">Thoát</a> 
+    </div>
+    <div class="module" style="display:none;">	
+			<div class="row" id="row"></div>
 		</div>
-		<div class="module">
-			<div class="header"  id="test"><a onclick="napData();" >Tiêu đề cố định</a></div>
-			<div class="bottom">Footer cố định</div>
-		
-			<div class="row" id="row">
-			
-			</div>
-		</div>
-		<div id="myOverlay" class="overlay">
-			<div class="overlay-content">
-				<a class="closebtn" onclick="closeSearch()">&times;</a>    
-				<iframe class="iFrame_content" id="myFrame" src=""></iframe>
-			</div>
-		</div>
-	</div>
-
-	<script src="https://meomaymap.github.io/nvq-aio/script.js"></script>
-
-</body>
+    <div class="Content" style="display:none;"></div>
+  </body>
 </html>
