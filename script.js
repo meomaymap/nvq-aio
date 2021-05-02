@@ -1,4 +1,4 @@
-<script>
+
         
         //Tạo thẻ link bằng js - 2
         function loadjscssfile(filename, filetype){
@@ -424,4 +424,4 @@
     }
 	
 
-</script>
+
