@@ -1,27 +1,240 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, height=device-height, maximum-scale=1.0, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://meomaymap.github.io/nvq-aio/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<meta charset="UTF-8">
+<style>
+	:root {--parent-height-1: 5vh;}
+		
+	* {touch-action: manipulation;}
+		
+	/* disable pull to refresh, keeps glow effects */
+	html, body {
+		font-family: Arial;
+		padding: 0px;
+		margin: 0px;
+		overscroll-behavior-y: contain; 
+	}
+
+    .module {
+		height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+		height: calc(var(--vh, 1vh) * 100);
+		margin: 0 auto;
+		max-width: 100%;
+		overflow: auto;
+		position: relative;
+		padding-bottom: var(--parent-height-1);       
+    }
+
+        .module__item {
+            align-items: center;
+            display: flex;
+            height: 30vh;
+            justify-content: center;
+        }
+
+        .module__item:nth-child(odd) {
+            background-color: #fff;
+            color: #F73859;
+        }
+
+        .module__item:nth-child(even) {
+            background-color: #F73859;
+            color: #F1D08A;
+        }
+		
+		div.header {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: var(--parent-height-1);
+			background-color: yellow;
+			color: black;
+			text-align: center;
+            z-index: 1;
+		}
+		
+		div.bottom {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: var(--parent-height-1);
+			background-color: green;
+			color: white;
+			text-align: center;
+            z-index: 1;
+		}
+		
+		div.sticky {
+			position: -webkit-sticky;
+			position: sticky;
+			top: var(--parent-height-1);
+
+		}
+
+
+        .column {float: left;}
+
+        .item {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+
+            background-color: lightblue;
+            position: relative;
+            width: 100%;
+        }
+
+        img {border-radius: 25%; padding: 0.2vw;}
+        
+
+        .Q01b {
+            position: absolute;
+
+            bottom: 0px;
+            width: 100%;
+            font-weight: bold;
+            background-color:lightcoral;
+            
+        }
+
+
+
+        .overlay {
+            height: 100vh;
+            width: 100vw;
+            display: none;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.9);
+            z-index: 2;
+        }
+
+        .Loading {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.9);
+            z-index: 2;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 0%;
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+            margin-top: 30px;
+            margin: auto;
+        }
+
+        .Loading-content {
+            position: relative;
+			top: 0%;
+            left: 0%;
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+			display: flex;
+  justify-content: center;
+  align-items: center;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: -5px;
+            right: 18px;
+            font-size: 30px;
+            cursor: pointer;
+            color: black;
+        }
+
+        .overlay .closebtn:hover {
+            color: #ccc;
+        }
+
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            position: absolute;
+			
+ 
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+			
+            }
+
+            /* Safari */
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .iFrame_content {
+            width: 100vw;
+            width: calc(var(--vw, 1vw) * 100);
+            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
+            
+        }
+        
+}
 	
-    <title>Tổng hợp các chương trình</title>
-  </head>
-  <body>
-    <div id="Header" class="Header" style="display:none">
-      <div class="dropdown">
-        <button class="dropbtn">Danh mục phần mềm 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content"></div>
-      </div>
-      <a id="Thoat">Thoát</a> 
-    </div>
-    <div class="module" style="display:none;">	
-			<div class="row" id="row"></div>
+</style>
+
+</head>
+<body>
+	<div class="main">
+	 
+		<div id="id01" class="loading" style="display: none" >
+			<div class="Loading-content">
+				<div class="loader" onclick="document.getElementById('id01').style.display='none'"></div>
+			</div>
+		  
 		</div>
-    <div class="Content" style="display:none;"></div>
-  </body>
+		<div class="module">
+			<div class="header"  id="test"><a onclick="napData();" >Tiêu đề cố định</a></div>
+			<div class="bottom">Footer cố định</div>
+		
+			<div class="row" id="row">
+			
+			</div>
+		</div>
+		<div id="myOverlay" class="overlay">
+			<div class="overlay-content">
+				<a class="closebtn" onclick="closeSearch()">&times;</a>    
+				<iframe class="iFrame_content" id="myFrame" src=""></iframe>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
 </html>
