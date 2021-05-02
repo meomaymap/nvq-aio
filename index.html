@@ -2,12 +2,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, maximum-scale=1.0, initial-scale=1">
-    
-    <title>Quang 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <title>Tổng hợp các chương trình</title>
   </head>
   <body>
-
-    <iframe id="myFrame1" class="myFrame" src="" frameborder="0" width="100%" title="Nội dung chương trình"></iframe>
-      <script src="./script.js"></script>
+    <div id="Header" class="Header" style="display:none">
+      <div class="dropdown">
+        <button class="dropbtn">Danh mục phần mềm 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a onclick="VisibleIFrame()">Link 1</a>
+          <a onclick="VisibleIFrame()">Link 2</a>
+          <a onclick="VisibleIFrame()">Link 3</a>
+        </div>
+      </div>
+      <a id="Thoat">Thoát</a> 
+    </div>
+    <div class="Content">
+      
+    </div>
   </body>
 </html>
