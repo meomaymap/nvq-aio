@@ -173,7 +173,7 @@ function napData() {
 			x.appendChild(node);
 			node.setAttribute('id', "myFrame" + i);
 			node.setAttribute('class', "iFrame_content");
-			node.setAttribute('frameborder', "0");
+			//node.setAttribute('frameborder', "0");
 			node.setAttribute('width', "100%");
 			node.setAttribute('style', "display:none;");
 			node.setAttribute('src', slag[i][0]);
