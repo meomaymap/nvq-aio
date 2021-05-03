@@ -50,9 +50,6 @@ div.bottom {
 	z-index: 1;
 }
 
-#Thoat {
-  float: right;
-}
 
 .Header a {
   float: left;
@@ -62,6 +59,10 @@ div.bottom {
   padding: 5px 5px;
   text-decoration: none;
   font-family: "Times New Roman";
+}
+
+#Thoat {
+  float: right;
 }
 
 .dropdown {
