@@ -133,6 +133,13 @@ function displayWindowSize() {
 	if (typeof(element) != 'undefined' && element != null)
 	{
 	  	ECN("overlay",0).style.top = ECN("header",0).offsetHeight + "px";
+		ECN("overlay",0).style.height = h - ECN("header",0).offsetHeight + "px";
+		ECN(".overlay-content",0).style.height = h - ECN("header",0).offsetHeight + "px";
+		
+		var x = ECN("iFrame_content",0);
+		for (var i=0; i<x.length; i++){
+			x[i].style.height = h - ECN("header",0).offsetHeight + "px";
+		}
 	}
 	
 	for(var i=0; i<DisplaySize[0].length;i++){
