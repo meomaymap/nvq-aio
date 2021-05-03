@@ -152,7 +152,7 @@ function AllDevice() {
 		}
 	}
 }
-
+var slag;
 function napData() {
 	setStyle(EID("id01"), {'display': 'block'});
 
@@ -164,6 +164,7 @@ function napData() {
 	url = url + "&" + "dk" + "=" + 1;
 
 	$.getJSON(url, function (json) {
+		slag = json.records.map(doc => Object.values(doc));
 		for (var i = 0; i < json.records.length; i++) {
 
 		var x = document.getElementsByClassName("row")[0];
@@ -224,142 +225,116 @@ openSearch();
 */
 
 function GetElement(elmnt, data) {
-//var el = document.getElementById(elmnt);
-var el = elmnt;
-for (var i = 0; i < data.length; i++) {
-var el = el.children[data[i]-1];
-}
-return el;
+	//var el = document.getElementById(elmnt);
+	var el = elmnt;
+	for (var i = 0; i < data.length; i++) {
+		var el = el.children[data[i]-1];
+	}
+	return el;
 }
 
 function openProgram(elmnt) {
-//lock('portrait');
+	setStyle(EID("id01"), {'display': 'block'});
+	
+	var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
 
-//setStyle(EID("myLoading"), {'display': 'block'});
+	var url = script_url+"?";
+	url = url + "action" + "=" + "Condition";
+	url = url + "&" + "url" + "=" + "https://meomaymap.github.io"; //window.location.href;
+	url = url + "&" + "dk" + "=" + GetElement(elmnt,[1,2]).innerHTML;
 
-//setStyle(EID("myLoading"), {'visibility': 'visible'});
-//document.getElementById('id01').style.display='block';
-setStyle(EID("id01"), {'display': 'block'});
+	var link = "none";
+	$.getJSON(url, function (json) {
+		//lock('portrait');
+		for (var i = 0; i < json.records.length; i++) {
+			if( json.records[i].Col4 == GetElement(elmnt,[1,2]).innerHTML) {
+				link = json.records[i].Col2 ;
+				break;
+			}
+		}
 
+		setStyle(EID("id01"), {'display': 'none'});
+		if (link != "none" && link !="") {
+			EID("myFrame").src = link;
+			setStyle(EID("myOverlay"), {'display': 'block'});
+		} else {
+		//alert("Hiện chương trình này đang bảo trì, làm ơn chạy lại sau 15 phút nữa");
 
-
-var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
-
-var url = script_url+"?";
-url = url + "action" + "=" + "Condition";
-url = url + "&" + "url" + "=" + "https://meomaymap.github.io"; //window.location.href;
-url = url + "&" + "dk" + "=" + GetElement(elmnt,[1,2]).innerHTML;
-
-var link = "none";
-$.getJSON(url, function (json) {
-//lock('portrait');
-for (var i = 0; i < json.records.length; i++) {
-if( json.records[i].Col4 == GetElement(elmnt,[1,2]).innerHTML) {
-link = json.records[i].Col2 ;
-break;
-}
-}
-
-setStyle(EID("id01"), {'display': 'none'});
-//document.getElementById('id01').style.display='none';
-//setStyle(EID("myLoading"), {'visibility': 'hidden'});
-
-if (link != "none" && link !="") {
-EID("myFrame").src = link;
-setStyle(EID("myOverlay"), {'display': 'block'});
-} else {
-//alert("Hiện chương trình này đang bảo trì, làm ơn chạy lại sau 15 phút nữa");
-
-}
-});
+		}
+	});
 }
 
 function GetData() {
-
-napData();
+	napData();
 }
-function GetProgram() {
 
-openProgram(this);
+function GetProgram() {
+	openProgram(this);
 }
 
 function closeSearch() {
 
-setStyle(EID("myOverlay"), {'display': 'none'});
-//setStyle(EID("myLoading"), {'visibility': 'hidden'}); setStyle(EID("myLoading"), {'visibility': 'hidden'});
-EID("myFrame").src ="" ;
+	setStyle(EID("myOverlay"), {'display': 'none'});
+	//setStyle(EID("myLoading"), {'visibility': 'hidden'}); setStyle(EID("myLoading"), {'visibility': 'hidden'});
+	EID("myFrame").src ="" ;
 }
-
-
-
-
-
 
 
 function GetElement(elmnt, data) {
-//var el = document.getElementById(elmnt);
-var el = elmnt;
-for (var i = 0; i < data.length; i++) {
-var el = el.children[data[i]-1];
-}
-return el;
+	//var el = document.getElementById(elmnt);
+	var el = elmnt;
+	for (var i = 0; i < data.length; i++) {
+		var el = el.children[data[i]-1];
+	}
+	return el;
 }
 
 function openProgram(elmnt) {
-//lock('portrait');
+	setStyle(EID("id01"), {'display': 'block'});
 
-//setStyle(EID("myLoading"), {'display': 'block'});
+	var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
 
-//setStyle(EID("myLoading"), {'visibility': 'visible'});
-//document.getElementById('id01').style.display='block';
-setStyle(EID("id01"), {'display': 'block'});
+	var url = script_url+"?";
+	url = url + "action" + "=" + "Condition";
+	url = url + "&" + "url" + "=" + "https://meomaymap.github.io"; //window.location.href;
+	url = url + "&" + "dk" + "=" + GetElement(elmnt,[1,2]).innerHTML;
 
+	var link = "none";
+	$.getJSON(url, function (json) {
 
+		for (var i = 0; i < json.records.length; i++) {
+			if( json.records[i].Col4 == GetElement(elmnt,[1,2]).innerHTML) {
+				link = json.records[i].Col2 ;
+				break;
+			}
+		}
 
-var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
+		setStyle(EID("id01"), {'display': 'none'});
+			//document.getElementById('id01').style.display='none';
+			//setStyle(EID("myLoading"), {'visibility': 'hidden'});
 
-var url = script_url+"?";
-url = url + "action" + "=" + "Condition";
-url = url + "&" + "url" + "=" + "https://meomaymap.github.io"; //window.location.href;
-url = url + "&" + "dk" + "=" + GetElement(elmnt,[1,2]).innerHTML;
+		if (link != "none" && link !="") {
+			EID("myFrame").src = link;
+			setStyle(EID("myOverlay"), {'display': 'block'});
+		} else {
+			//alert("Hiện chương trình này đang bảo trì, làm ơn chạy lại sau 15 phút nữa");
 
-var link = "none";
-$.getJSON(url, function (json) {
-
-for (var i = 0; i < json.records.length; i++) {
-if( json.records[i].Col4 == GetElement(elmnt,[1,2]).innerHTML) {
-link = json.records[i].Col2 ;
-break;
-}
-}
-
-setStyle(EID("id01"), {'display': 'none'});
-//document.getElementById('id01').style.display='none';
-//setStyle(EID("myLoading"), {'visibility': 'hidden'});
-
-if (link != "none" && link !="") {
-EID("myFrame").src = link;
-setStyle(EID("myOverlay"), {'display': 'block'});
-} else {
-//alert("Hiện chương trình này đang bảo trì, làm ơn chạy lại sau 15 phút nữa");
-
-}
-});
+		}
+	});
 }
 
 function GetData() {
-
-napData();
+	napData();
 }
-function GetProgram() {
 
-openProgram(this);
+function GetProgram() {
+	openProgram(this);
 }
 
 function closeSearch() {
-//lock('portrait');
-setStyle(EID("myOverlay"), {'display': 'none'});
-//setStyle(EID("myLoading"), {'visibility': 'hidden'}); setStyle(EID("myLoading"), {'visibility': 'hidden'});
-EID("myFrame").src ="" ;
+	//lock('portrait');
+	setStyle(EID("myOverlay"), {'display': 'none'});
+	//setStyle(EID("myLoading"), {'visibility': 'hidden'}); setStyle(EID("myLoading"), {'visibility': 'hidden'});
+	EID("myFrame").src ="" ;
 }
 
