@@ -310,14 +310,14 @@ function openProgram(elmnt) {
 		setStyle(ECN("iFrame_content",vitri), {'display': 'block'});
 		setStyle(ECN("module",0), {'display': 'none'});
 		setStyle(ECN("overlay",0), {'display': 'block'});
-		ECN("iFrame_content",vitri).focus();
+
 		    //GotoUrl(ECN("myFrame",vitri), slag[vitri][0]);//"https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
 	}
 
 	
 
-	setStyle(ECN("dropdown",0), {'display': 'none'});
-	setStyle(ECN("dropdown",0), {'display': 'block'});
+	//setStyle(ECN("dropdown-content",0), {'display': 'none'});
+	//setStyle(ECN("dropdown",0), {'display': 'block'});
 	
 }
 
