@@ -3,7 +3,6 @@ function preventPullToRefresh(element) {
 
 	document.querySelector(element).addEventListener('touchstart', function(e){
 		if (e.touches.length !== 1) {
-			alert(e.className);
 			return;
 		}
 		var scrollY = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
