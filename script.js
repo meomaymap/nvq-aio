@@ -171,7 +171,7 @@ function napData() {
 			var x = document.getElementsByClassName("overlay-content")[0];
 			var node = document.createElement("iframe");
 			x.appendChild(node);
-			node.setAttribute('id', "myFrame" + i + 1);
+			node.setAttribute('id', "myFrame" + i);
 			node.setAttribute('class', "iFrame_content");
 			node.setAttribute('frameborder', "0");
 			node.setAttribute('width', "100%");
@@ -183,7 +183,7 @@ function napData() {
         		var x = document.getElementsByClassName("dropdown-content")[0];
 			var node = document.createElement("a");
 			x.appendChild(node);
-			node.setAttribute('class', "Item Item" + i);
+			node.setAttribute('class', "MenuBr MenuBr" + i);
 			node.innerHTML = slag[i][2];
 		
 
@@ -191,7 +191,7 @@ function napData() {
 
 		var node = document.createElement("div");
 		x.appendChild(node);
-		node.setAttribute('class', "column");
+		node.setAttribute('class', "column column" + i);
 		node.setAttribute('onclick', "openProgram(this);");
 
 
