@@ -167,6 +167,7 @@ function napData() {
 		slag = json.records.map(doc => Object.values(doc));
 		alert(slag);
 		for (var i = 0; i < json.records.length; i++) {
+		
 
 		var x = document.getElementsByClassName("row")[0];
 
@@ -184,12 +185,12 @@ function napData() {
 		var x = node;
 		var node = document.createElement("i");
 		x.appendChild(node);
-		node.setAttribute('class', json.records[i].Col5 + " " + "Q01a");
+		node.setAttribute('class', slag[i][3] + " " + "Q01a");
 
 		var node = document.createElement("div");
 		x.appendChild(node);
 		node.setAttribute('class', "Q01b");
-		node.innerHTML = json.records[i].Col4;
+		node.innerHTML = slag[i][2];
 		}
 
 		displayWindowSize();
