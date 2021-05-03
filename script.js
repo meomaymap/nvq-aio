@@ -132,7 +132,7 @@ function displayWindowSize() {
 	var element = ECN("iFrame_content",0)	// = h - EID("Header").offsetHeight + "px";
 	if (typeof(element) != 'undefined' && element != null)
 	{
-	  alert(ECN("iFrame_content",0).style.height);
+	  alert(12);
 	}
 	
 	for(var i=0; i<DisplaySize[0].length;i++){
