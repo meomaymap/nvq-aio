@@ -159,8 +159,8 @@ img {border-radius: 25%; padding: 0.2vw;}
 	z-index: 2;
 	
 	left: 0;
-	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0, 0.9);
+	background-color: rgb(255,255,255);
+	background-color: rgba(255,255,255, 0.9);
 	z-index: 2;
 }
 
@@ -229,6 +229,8 @@ border-top: 16px solid #3498db;
 width: 120px;
 height: 120px;
 position: absolute;
+background-color: rgb(255,255,255);
+background-color: rgba(255,255,255, 0);
 
 
 -webkit-animation: spin 2s linear infinite; /* Safari */
