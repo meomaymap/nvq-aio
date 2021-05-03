@@ -129,9 +129,10 @@ function displayWindowSize() {
 	// Then we set the value in the --vh custom property to the root of the document
 	document.documentElement.style.setProperty('--vh', `${vh}px`);
 	
-	var IFr = ECN("iFrame_content",0)	// = h - EID("Header").offsetHeight + "px";
-	if (IFr){
-		alert(ECN("iFrame_content",0).style.height);
+	var element = ECN("iFrame_content",0)	// = h - EID("Header").offsetHeight + "px";
+	if (typeof(element) != 'undefined' && element != null)
+	{
+	  alert(ECN("iFrame_content",0).style.height);
 	}
 	
 	for(var i=0; i<DisplaySize[0].length;i++){
@@ -170,7 +171,7 @@ function napData() {
 
 	$.getJSON(url, function (json) {
 		slag = json.records.map(doc => Object.values(doc));
-		alert(slag);
+
 		for (var i = 0; i < json.records.length; i++) {
 			
 			var x = document.getElementsByClassName("overlay-content")[0];
