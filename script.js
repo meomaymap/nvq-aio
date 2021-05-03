@@ -291,13 +291,14 @@ function openProgram(elmnt) {
 			ECN("iFrame_content",i).style.display = "none";
 		}
 		
-		setStyle(ECN("module",0), {'display': 'none'});
-		setStyle(ECN("myOverlay",0), {'display': 'block'});
+		
 
-		setStyle(ECN("iFrame_content", {'display': 'block'});
+		setStyle(ECN("iFrame_content",vitri), {'display': 'block'});
 		    //GotoUrl(ECN("myFrame",vitri), slag[vitri][0]);//"https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
 	}
 	
+	setStyle(ECN("module",0), {'display': 'none'});
+	setStyle(ECN("myOverlay",0), {'display': 'block'});
 	
 	//setStyle(elmnt, {'display': 'block'});
 	/*
