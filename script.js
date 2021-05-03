@@ -119,7 +119,7 @@ for(var i=0; i<DisplaySize[0].length;i++){
 
 function displayWindowSize() {
 	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', '${vh}px');
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 	for(var i=0; i<DisplaySize[0].length;i++){
 		if(window.innerWidth > DisplaySize[0][i] && window.innerWidth <= DisplaySize[1][i]) {
@@ -136,14 +136,7 @@ function displayWindowSize() {
     //}
 
     ECN("row",0).style.height = h - EID("Header").offsetHeight - EID("bottom").offsetHeight + "px";
-	/*
-    for(var i=0; i<DisplaySize[0].length;i++){
-                if(window.innerWidth > DisplaySize[0][i] && window.innerWidth <= DisplaySize[1][i]) {
-                    SizeChange = "screen and (min-width: " + DisplaySize[0][i] + "px) and (max-width: " + DisplaySize[1][i] + "px)";
-                    pos = Math.pow(2, i);
-                }
-            }
-	*/
+
 	AllDevice();
 }            
 
