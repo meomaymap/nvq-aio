@@ -212,7 +212,7 @@ function napData() {
 		}
 
 		displayWindowSize();
-		//setStyle(EID("id01"), {'display': 'none'});
+		setStyle(EID("id01"), {'display': 'none'});
 	});
 }
 
@@ -254,6 +254,9 @@ function GetElement(elmnt, data) {
 }
 
 function openProgram(elmnt) {
+	
+	alert(elmnt.id);
+	/*
 	setStyle(EID("id01"), {'display': 'block'});
 	
 	var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
@@ -282,6 +285,7 @@ function openProgram(elmnt) {
 
 		}
 	});
+	*/
 }
 
 function GetData() {
@@ -310,8 +314,7 @@ function GetElement(elmnt, data) {
 }
 
 function openProgram(elmnt) {
-	alert(elmnt.id);
-	/*
+
 	setStyle(EID("id01"), {'display': 'block'});
 
 	var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
@@ -343,7 +346,7 @@ function openProgram(elmnt) {
 
 		}
 	});
-	*/
+
 }
 
 function GetData() {
