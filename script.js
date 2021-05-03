@@ -314,6 +314,7 @@ function openProgram(elmnt) {
 	
 	setStyle(ECN("module",0), {'display': 'none'});
 	setStyle(ECN("overlay",0), {'display': 'block'});
+	setStyle(ECN("dropdown-content",0), {'display': 'none'});
 	
 }
 
@@ -321,6 +322,7 @@ function openProgram(elmnt) {
 function gotoMenu(){
 	setStyle(ECN("module",0), {'display': 'block'});
 	setStyle(ECN("overlay",0), {'display': 'none'});	
+	setStyle(ECN("dropdown-content",0), {'display': 'block'});
 }	
 	
 function GetData() {
