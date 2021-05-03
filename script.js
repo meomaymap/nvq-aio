@@ -165,6 +165,7 @@ function napData() {
 
 	$.getJSON(url, function (json) {
 		slag = json.records.map(doc => Object.values(doc));
+		alert(slag);
 		for (var i = 0; i < json.records.length; i++) {
 
 		var x = document.getElementsByClassName("row")[0];
