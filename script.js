@@ -282,6 +282,7 @@ function GetElement(elmnt, data) {
 
 function openProgram(elmnt) {
 	var str = elmnt.target.className;
+	alert(str);
 	var arr = str.split(" ");
 
 	var vitri = parseInt(arr[1].substring(6,str.length - 6));
