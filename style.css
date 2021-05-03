@@ -1,5 +1,5 @@
 <style>
-:root {--parent-height-1: 5vh;}
+:root {--parent-height-1: 3vh;}
 
 * {touch-action: manipulation;}
 
@@ -30,7 +30,8 @@ div.header {
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 5vh;	/*var(--parent-height-1);*/
+	height: 3vh;	/*var(--parent-height-1);*/
+	height: var(--parent-height-1);
 	background-color:yellow;
 	text-align: center;
 	z-index: 1;
@@ -41,7 +42,8 @@ div.bottom {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: 5vh;	/*var(--parent-height-1);*/
+	height: 3vh;	/*var(--parent-height-1);*/
+	height: var(--parent-height-1);
 	background-color: green;
 	color: white;
 	text-align: center;
@@ -141,12 +143,14 @@ img {border-radius: 25%; padding: 0.2vw;}
 
 
 .overlay {
-	/*height: calc(var(--vh, 1vh) * 100 - var(--parent-height-1) * 2); */
+	height: 97vh;
+	height: calc(var(--vh, 1vh) * 100 - var(--parent-height-1) * 2); 
 	width: 100vw;
 	display: none;
 	position: fixed;
 	z-index: 2;
-	top: 5vh;	/*calc(var(--parent-height-1)*2);*/
+	top: 3vh;	/*calc(var(--parent-height-1)*2);*/
+	top: var(--parent-height-1);
 	left: 0;
 	background-color: rgb(0,0,0);
 	background-color: rgba(0,0,0, 0.9);
@@ -236,7 +240,7 @@ animation: spin 2s linear infinite;
 
 width: 100vw;
 width: calc(var(--vw, 1vw) * 100);
-height: 95vh;
+height: 97vh;
 height: calc(var(--vh, 1vh) * 100 - var(--parent-height-1));
 
 }
