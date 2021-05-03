@@ -281,8 +281,24 @@ function GetElement(elmnt, data) {
 }
 
 function openProgram(elmnt) {
-	setStyle(ECN("module",0), {'display': 'none'});
-	setStyle(ECN("myOverlay",0), {'display': 'block'});
+	var str = e.target.className;
+	var arr = str.split(" ");
+
+	var vitri = parseInt(arr[1].substring(6,str.length - 6));
+	if (arr[0] == "MenuBr" || arr[0] == "column"){
+
+		for (var i=0; i<ECN_Array("iFrame_content").length; i++){
+			ECN("iFrame_content",i).style.display = "none";
+		}
+		
+		setStyle(ECN("module",0), {'display': 'none'});
+		setStyle(ECN("myOverlay",0), {'display': 'block'});
+
+		setStyle(ECN("iFrame_content", {'display': 'block'});
+		    //GotoUrl(ECN("myFrame",vitri), slag[vitri][0]);//"https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
+	}
+	
+	
 	//setStyle(elmnt, {'display': 'block'});
 	/*
 	setStyle(EID("id01"), {'display': 'block'});
