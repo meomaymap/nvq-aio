@@ -38,7 +38,6 @@ document.addEventListener("keydown", function(e){
 window.addEventListener("resize", displayWindowSize);
 
 document.addEventListener("touchstart", function(e){
-	lock('portrait');
 	if(event.touches.length > 1){
 		//the event is multi-touch
 		//you can then prevent the behavior
@@ -338,7 +337,7 @@ function GetProgram() {
 }
 
 function closeSearch() {
-	//lock('portrait');
+
 	setStyle(EID("myOverlay"), {'display': 'none'});
 	//setStyle(EID("myLoading"), {'visibility': 'hidden'}); setStyle(EID("myLoading"), {'visibility': 'hidden'});
 	EID("myFrame").src ="" ;
