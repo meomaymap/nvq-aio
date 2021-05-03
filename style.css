@@ -181,9 +181,9 @@ img {border-radius: 25%; padding: 0.2vw;}
 
 .overlay-content {
 	position: relative;
-	/*
-	top: 0%;
 	
+	top: 0%;
+	/*
 	height: 97vh;
 	height: calc(var(--vh, 1vh) * 100 - var(--parent-height-1) * 2); 
 	*/
