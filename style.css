@@ -31,7 +31,7 @@ div.header {
 	top: 0;
 	width: 100%;
 	height: var(--parent-height-1);
-	background-color: yellow;
+	background-color:#333;
 	color: black;
 	text-align: center;
 	z-index: 1;
@@ -47,6 +47,24 @@ div.bottom {
 	color: white;
 	text-align: center;
 	z-index: 1;
+}
+
+#Thoat {
+  float: right;
+}
+
+.Header a {
+  float: left;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-family: "Times New Roman";
+}
+
+.Header a:hover {
+  background-color: red;
 }
 
 div.sticky {
