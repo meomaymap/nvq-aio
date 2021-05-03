@@ -129,7 +129,10 @@ function displayWindowSize() {
 	// Then we set the value in the --vh custom property to the root of the document
 	document.documentElement.style.setProperty('--vh', `${vh}px`);
 	
-	alert(ECN("iFrame_content",0).style.height);	// = h - EID("Header").offsetHeight + "px";
+	var IFr = ECN("iFrame_content",0)	// = h - EID("Header").offsetHeight + "px";
+	if (IFr){
+		alert(ECN("iFrame_content",0).style.height);
+	}
 	
 	for(var i=0; i<DisplaySize[0].length;i++){
 		if(window.innerWidth > DisplaySize[0][i] && window.innerWidth <= DisplaySize[1][i]) {
