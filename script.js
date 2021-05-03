@@ -350,3 +350,6 @@ window.addEventListener("load",function() {
             
         });
 
+function RefreshPage(){
+        location.replace( window.location.href);	
+}
