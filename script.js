@@ -298,6 +298,7 @@ function GetElement(elmnt, data) {
 
 function openProgram(elmnt) {
 	var str = elmnt.className;
+	if (elmnt.innerHTML!="Tải lại" || elmnt.innerHTML!="Thoát"){
 	var arr = str.split(" ");
 
 	var vitri = parseInt(arr[1].substring(6,str.length - 6));
@@ -318,7 +319,7 @@ function openProgram(elmnt) {
 
 	setStyle(ECN("dropdown-content",0), {'display': 'none'});
 	//setStyle(ECN("dropdown",0), {'display': 'block'});
-	
+	}
 }
 
 
