@@ -317,7 +317,7 @@ function openProgram(elmnt) {
 	
 
 	setStyle(ECN("dropdown-content",0), {'display': 'none'});
-	//setStyle(ECN("dropdown",0), {'display': 'block'});
+
 	}
 }
 
