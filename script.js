@@ -281,9 +281,7 @@ function GetElement(elmnt, data) {
 }
 
 function openProgram(elmnt) {
-	//var str = elmnt.target.className;
-	alert(elmnt.className);
-	/*
+	var str = elmnt.className;
 	var arr = str.split(" ");
 
 	var vitri = parseInt(arr[1].substring(6,str.length - 6));
@@ -298,7 +296,7 @@ function openProgram(elmnt) {
 		setStyle(ECN("iFrame_content",vitri), {'display': 'block'});
 		    //GotoUrl(ECN("myFrame",vitri), slag[vitri][0]);//"https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
 	}
-	*/
+
 	
 	setStyle(ECN("module",0), {'display': 'none'});
 	setStyle(ECN("myOverlay",0), {'display': 'block'});
