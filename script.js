@@ -299,7 +299,7 @@ function openProgram(elmnt) {
 
 	
 	setStyle(ECN("module",0), {'display': 'none'});
-	setStyle(ECN("myOverlay",0), {'display': 'block'});
+	setStyle(ECN("overlay",0), {'display': 'block'});
 	
 	//setStyle(elmnt, {'display': 'block'});
 	/*
