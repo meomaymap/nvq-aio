@@ -130,10 +130,10 @@ function displayWindowSize() {
 	document.documentElement.style.setProperty('--vh', `${vh}px`);
 	
 	for (var i=0; i < ECN_Array("iFrame_content",0).length; i++){
-		ECN("iFrame_content",i).style.height = h - EID("Header").offsetHeight - EID("bottom").offsetHeight + "px";
+		ECN("iFrame_content",i).style.height = h - ECN("Header",0).offsetHeight - ECN("bottom",0).offsetHeight + "px";
 	}
 	
-	ECN("overlay",0).style.top = EID("Header").offsetHeight + "px";
+	ECN("overlay",0).style.top = ECN("Header",0).offsetHeight + "px";
 	
 	for(var i=0; i<DisplaySize[0].length;i++){
 		if(window.innerWidth > DisplaySize[0][i] && window.innerWidth <= DisplaySize[1][i]) {
