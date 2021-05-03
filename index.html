@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, height=device-height, maximum-scale=1.0, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, height=device-height, maximum-scale=1.0, initial-scale=1">
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://meomaymap.github.io/nvq-aio/style.css">
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 </head>
 <body>
-	<div id="id01" class="loading" style="display: none" >
-		<div class="Loading-content">
-			<div class="loader" onclick="document.getElementById('id01').style.display='none'"></div>
+	<div class="main">
+	 
+		<div id="id01" class="loading" style="display: none" >
+			<div class="Loading-content">
+				<div class="loader" onclick="document.getElementById('id01').style.display='none'"></div>
+			</div>
+		  
+		</div>
+		<div class="module">
+			<div class="header"  id="test"><a onclick="napData();" >Tiêu đề cố định</a></div>
+			<div class="bottom">Footer cố định</div>
+		
+			<div class="row" id="row">
+			
+			</div>
+		</div>
+		<div id="myOverlay" class="overlay">
+			<div class="overlay-content">
+				<a class="closebtn" onclick="closeSearch()">&times;</a>    
+				<iframe class="iFrame_content" id="myFrame" src=""></iframe>
+			</div>
 		</div>
 	</div>
-	
-	<div class="header"  id="test"><a onclick="napData();" >Tiêu đề cố định</a></div>
-	
-	<div class="module">
-		<div class="row" id="row" style="background-color: lightblue;"></div>
-	</div>
-	
-	<div id="myOverlay" class="overlay">
-		<div class="overlay-content">
-			<a class="closebtn" onclick="closeSearch()">&times;</a>    
-			<iframe class="iFrame_content" id="myFrame" src=""></iframe>
-		</div>
-	</div>
-	
-	<div class="bottom" id="bottom">Footer cố định</div>
 
+<script src="https://meomaymap.github.io/nvq-aio/script.js">
+        
+        
+	
 
-	 <script src="https://meomaymap.github.io/nvq-aio/script.js"></script>
+</script>
 
 </body>
 </html>
