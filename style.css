@@ -32,7 +32,6 @@ div.header {
 	width: 100%;
 	height: var(--parent-height-1);
 	background-color:yellow;
-	color: black;
 	text-align: center;
 	z-index: 1;
 }
