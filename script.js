@@ -281,7 +281,9 @@ function GetElement(elmnt, data) {
 }
 
 function openProgram(elmnt) {
-	alert(elmnt.target.id);
+	setStyle(ECN("module",0), {'display': 'none'});
+	setStyle(ECN("myOverlay",0), {'display': 'block'});
+	setStyle(elmnt, {'display': 'block'});
 	/*
 	setStyle(EID("id01"), {'display': 'block'});
 
