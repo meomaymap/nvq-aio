@@ -1,25 +1,44 @@
 <style>
-:root {--parent-height-1: 5vh;}
+	:root {--parent-height-1: 5vh;}
 		
-* {touch-action: manipulation;}
+	* {touch-action: manipulation;}
 		
-/* disable pull to refresh, keeps glow effects */
-html, body {
-	font-family: Arial;
-	padding: 0px;
-	margin: 0px;
-	overscroll-behavior-y: contain; 
-}
+	/* disable pull to refresh, keeps glow effects */
+	html, body {
+		font-family: Arial;
+		padding: 0px;
+		margin: 0px;
+		overscroll-behavior-y: contain; 
+	}
 
-.module {
-	margin: 0;
-	max-width: 100%;
-	overflow: auto;
-	position: relative;
-}
+    .module {
+		height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+		height: calc(var(--vh, 1vh) * 100);
+		margin: 0 auto;
+		max-width: 100%;
+		overflow: auto;
+		position: relative;
+		padding-bottom: var(--parent-height-1);       
+    }
 
-        		
-div.header {
+        .module__item {
+            align-items: center;
+            display: flex;
+            height: 30vh;
+            justify-content: center;
+        }
+
+        .module__item:nth-child(odd) {
+            background-color: #fff;
+            color: #F73859;
+        }
+
+        .module__item:nth-child(even) {
+            background-color: #F73859;
+            color: #F1D08A;
+        }
+		
+		div.header {
 			position: fixed;
 			left: 0;
 			top: 0;
