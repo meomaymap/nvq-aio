@@ -199,6 +199,7 @@ function napData() {
 			var node = document.createElement("a");
 			x.appendChild(node);
 			node.setAttribute('class', "MenuBr MenuBr" + i);
+			node.setAttribute('onclick', "openProgram(this);");
 			node.innerHTML = slag[i][2];
 		
 
@@ -352,6 +353,12 @@ function openProgram(elmnt) {
 	*/
 }
 
+
+function gotoMenu(){
+	setStyle(ECN("module",0), {'display': 'block'});
+	setStyle(ECN("overlay",0), {'display': 'none'});	
+}	
+	
 function GetData() {
 	napData();
 }
