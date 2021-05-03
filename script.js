@@ -253,40 +253,7 @@ function GetElement(elmnt, data) {
 	return el;
 }
 
-function openProgram(elmnt) {
-	
-	alert(elmnt.id);
-	/*
-	setStyle(EID("id01"), {'display': 'block'});
-	
-	var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
 
-	var url = script_url+"?";
-	url = url + "action" + "=" + "Condition";
-	url = url + "&" + "url" + "=" + "https://meomaymap.github.io"; //window.location.href;
-	url = url + "&" + "dk" + "=" + GetElement(elmnt,[1,2]).innerHTML;
-
-	var link = "none";
-	$.getJSON(url, function (json) {
-		//lock('portrait');
-		for (var i = 0; i < json.records.length; i++) {
-			if( json.records[i].Col4 == GetElement(elmnt,[1,2]).innerHTML) {
-				link = json.records[i].Col2 ;
-				break;
-			}
-		}
-
-		setStyle(EID("id01"), {'display': 'none'});
-		if (link != "none" && link !="") {
-			EID("myFrame").src = link;
-			setStyle(EID("myOverlay"), {'display': 'block'});
-		} else {
-		//alert("Hiện chương trình này đang bảo trì, làm ơn chạy lại sau 15 phút nữa");
-
-		}
-	});
-	*/
-}
 
 function GetData() {
 	napData();
@@ -314,7 +281,8 @@ function GetElement(elmnt, data) {
 }
 
 function openProgram(elmnt) {
-
+	alert(elmnt.id);
+	/*
 	setStyle(EID("id01"), {'display': 'block'});
 
 	var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
@@ -346,7 +314,7 @@ function openProgram(elmnt) {
 
 		}
 	});
-
+	*/
 }
 
 function GetData() {
