@@ -292,7 +292,7 @@ function openProgram(elmnt) {
 		}
 		
 		
-
+		alert(vitri);
 		setStyle(ECN("iFrame_content",vitri), {'display': 'block'});
 		    //GotoUrl(ECN("myFrame",vitri), slag[vitri][0]);//"https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
 	}
