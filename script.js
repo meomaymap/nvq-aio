@@ -306,9 +306,7 @@ function openProgram(elmnt) {
 		for (var i=0; i<ECN_Array("iFrame_content").length; i++){
 			ECN("iFrame_content",i).style.display = "none";
 		}
-		
-		
-		alert(vitri);
+
 		setStyle(ECN("iFrame_content",vitri), {'display': 'block'});
 		    //GotoUrl(ECN("myFrame",vitri), slag[vitri][0]);//"https://script.google.com/macros/s/AKfycbxSxYSwWLllPYEVp08MTCXDbmb5TftX8TP9HGI3naDUvsJmyw/exec?action=12");
 	}
@@ -317,40 +315,6 @@ function openProgram(elmnt) {
 	setStyle(ECN("module",0), {'display': 'none'});
 	setStyle(ECN("overlay",0), {'display': 'block'});
 	
-	//setStyle(elmnt, {'display': 'block'});
-	/*
-	setStyle(EID("id01"), {'display': 'block'});
-
-	var script_url = "https://script.google.com/macros/s/AKfycbx4mSzVI2d7vXr-I8b503ct7zm0iBRFyUObAqBuHWxpacmErLM/exec";
-
-	var url = script_url+"?";
-	url = url + "action" + "=" + "Condition";
-	url = url + "&" + "url" + "=" + "https://meomaymap.github.io"; //window.location.href;
-	url = url + "&" + "dk" + "=" + GetElement(elmnt,[1,2]).innerHTML;
-
-	var link = "none";
-	$.getJSON(url, function (json) {
-
-		for (var i = 0; i < json.records.length; i++) {
-			if( json.records[i].Col4 == GetElement(elmnt,[1,2]).innerHTML) {
-				link = json.records[i].Col2 ;
-				break;
-			}
-		}
-
-		setStyle(EID("id01"), {'display': 'none'});
-			//document.getElementById('id01').style.display='none';
-			//setStyle(EID("myLoading"), {'visibility': 'hidden'});
-
-		if (link != "none" && link !="") {
-			EID("myFrame").src = link;
-			setStyle(EID("myOverlay"), {'display': 'block'});
-		} else {
-			//alert("Hiện chương trình này đang bảo trì, làm ơn chạy lại sau 15 phút nữa");
-
-		}
-	});
-	*/
 }
 
 
