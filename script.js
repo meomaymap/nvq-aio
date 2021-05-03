@@ -129,6 +129,8 @@ function displayWindowSize() {
 	// Then we set the value in the --vh custom property to the root of the document
 	document.documentElement.style.setProperty('--vh', `${vh}px`);
 	
+	var h = window.innerHeight;
+	
 	var element = ECN("iFrame_content",0)	// = h - EID("Header").offsetHeight + "px";
 	if (typeof(element) != 'undefined' && element != null)
 	{
