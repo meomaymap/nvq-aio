@@ -352,6 +352,5 @@ window.addEventListener("load",function() {
         });
 
 function RefreshPage(){
-	alert(23);
         location.replace( window.location.href);	
 }
