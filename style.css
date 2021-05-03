@@ -146,7 +146,7 @@ img {border-radius: 25%; padding: 0.2vw;}
 	display: none;
 	position: fixed;
 	z-index: 2;
-	top: var(--parent-height-1);
+	top: 100px;	/*var(--parent-height-1);*/
 	left: 0;
 	background-color: rgb(0,0,0);
 	background-color: rgba(0,0,0, 0.9);
