@@ -1,26 +1,25 @@
 <style>
-	:root {--parent-height-1: 5vh;}
+:root {--parent-height-1: 5vh;}
 		
-	* {touch-action: manipulation;}
+* {touch-action: manipulation;}
 		
-	/* disable pull to refresh, keeps glow effects */
-	html, body {
-		font-family: Arial;
-		padding: 0px;
-		margin: 0px;
-		overscroll-behavior-y: contain; 
-	}
+/* disable pull to refresh, keeps glow effects */
+html, body {
+	font-family: Arial;
+	padding: 0px;
+	margin: 0px;
+	overscroll-behavior-y: contain; 
+}
 
-    .module {
-
-		margin: 0;
-		max-width: 100%;
-		overflow: auto;
-		position: relative;
-    }
+.module {
+	margin: 0;
+	max-width: 100%;
+	overflow: auto;
+	position: relative;
+}
 
         		
-		div.header {
+div.header {
 			position: fixed;
 			left: 0;
 			top: 0;
