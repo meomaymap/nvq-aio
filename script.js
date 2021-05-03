@@ -38,10 +38,10 @@ document.addEventListener("keydown", function(e){
 window.addEventListener("resize", displayWindowSize);
 
 document.addEventListener("touchstart", function(e){
-	if(event.touches.length > 1){
+	if(e.touches.length > 1){
 		//the event is multi-touch
 		//you can then prevent the behavior
-		event.preventDefault()
+		e.preventDefault()
 	}
 },{passive: false});
 
