@@ -326,7 +326,7 @@ function gotoMenu(){
 	setStyle(ECN("module",0), {'display': 'block'});
 	setStyle(ECN("overlay",0), {'display': 'none'});	
 	
-	if (ECN("dropdown-content").style.display === "none") {
+	if (ECN("dropdown-content").style.display == "none") {
 		setStyle(ECN("dropdown-content",0), {'display': 'block'});
   	} else {
 		setStyle(ECN("dropdown-content",0), {'display': 'none'});
