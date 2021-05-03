@@ -281,7 +281,7 @@ function GetElement(elmnt, data) {
 }
 
 function openProgram(elmnt) {
-	alert(elmnt.id);
+	alert(elmnt.target.id);
 	/*
 	setStyle(EID("id01"), {'display': 'block'});
 
