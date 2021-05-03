@@ -343,3 +343,10 @@ function closeSearch() {
 	EID("myFrame").src ="" ;
 }
 
+window.addEventListener("load",function() {
+            // Set a timeout...
+            
+	napData();
+            
+        });
+
