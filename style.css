@@ -108,7 +108,7 @@ div.bottom {
   background-color: #ddd;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover {
   display: block;
 }
 div.sticky {
