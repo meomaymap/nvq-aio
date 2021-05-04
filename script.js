@@ -1,3 +1,12 @@
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Smith");
+  // Retrieve
+  alert(localStorage.getItem("lastname"));
+} else {
+  alert("Sorry, your browser does not support Web Storage...");
+}
+
 function preventPullToRefresh(element) {
 	var prevent = false;
 
