@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mobile Detect Library</title>
+
+    <!-- (A) LOAD THE LIBRARY -->
+    <!-- https://github.com/hgoebl/mobile-detect.js -->
+    <!-- https://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+      var md = new MobileDetect(window.navigator.userAgent);
+      console.log( md.mobile() ); // null if not mobile device
+      console.log( md.phone() ); // null if not smartphone
+      console.log( md.tablet() ); // null if not tablet
+      console.log( md.userAgent() ); // Browser used. Chrome, Firefox, Dolfin, etc...
+      console.log( md.os() ); // Android, iOS, Windwows, OSX, or Linux
+      console.log( md.version('Webkit') ); // Webkit version
+      console.log( md.versionStr('Build') ); // Build
+    });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
