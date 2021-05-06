@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Better Detection</title>
+    <script>
+    window.addEventListener("load", function(){
+      // (A) BREAK USER AGENT DOWN
+      var isMobile = navigator.userAgent.toLowerCase().match(/mobile/i),
+          isTablet = navigator.userAgent.toLowerCase().match(/tablet/i),
+          isAndroid = navigator.userAgent.toLowerCase().match(/android/i),
+          isiPhone = navigator.userAgent.toLowerCase().match(/iphone/i),
+          isiPad = navigator.userAgent.toLowerCase().match(/ipad/i);
+
+      // (B) DETECTED DEVICE TYPE
+      var detected = isMobile ? "Mobile | " : "Not Mobile | ";
+      detected += isTablet ? "Tablet | " : "Not Tablet | ";
+      if (isAndroid) { detected += "Android"; }
+      else if (isiPhone || isiPad) { detected += "Apple"; }
+      else { detected += "Nope"; }
+      alert("Device Type - " + detected);
+    });
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>
