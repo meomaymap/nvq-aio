@@ -10,13 +10,13 @@
     <script>
     window.addEventListener("load", function(){
       var md = new MobileDetect(window.navigator.userAgent);
-      console.log( md.mobile() ); // null if not mobile device
-      console.log( md.phone() ); // null if not smartphone
-      console.log( md.tablet() ); // null if not tablet
-      console.log( md.userAgent() ); // Browser used. Chrome, Firefox, Dolfin, etc...
-      console.log( md.os() ); // Android, iOS, Windwows, OSX, or Linux
-      console.log( md.version('Webkit') ); // Webkit version
-      console.log( md.versionStr('Build') ); // Build
+      alert(md.mobile() ); // null if not mobile device
+      alert(md.phone() ); // null if not smartphone
+      alert(md.tablet() ); // null if not tablet
+      alert(md.userAgent() ); // Browser used. Chrome, Firefox, Dolfin, etc...
+      alert(md.os() ); // Android, iOS, Windwows, OSX, or Linux
+      alert(md.version('Webkit') ); // Webkit version
+      alert(md.versionStr('Build') ); // Build
     });
     </script>
   </head>
